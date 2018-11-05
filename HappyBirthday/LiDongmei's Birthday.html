@@ -1,3 +1,9 @@
+<!-- /*
+ * @Author: 陈德立419287484@qq.com 
+ * @Date: 2018-11-06 02:13:16 
+ * @Last Modified by:   陈德立419287484@qq.com 
+ * @Last Modified time: 2018-11-06 02:13:16 
+ */ -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -301,20 +307,20 @@
         //移动端
         // console.log("移动端")
         document.getElementById("player").innerHTML = "<iframe frameborder='no' border='0' marginwidth='0' marginheight='0' width=298 height=52  style='position: absolute;left: 0px;top:0px'src='http://music.163.com/outchain/player?type=0&id=2199721764&auto=1&height=32'></iframe>"
-      $("#loveHeart").css("float", "none");
-      // $("#loveHeart").css("width", window.innerWidth-70);
-      // $("#loveHeart").css("height", window.innerWidth-45);
-      $("#code").css("height", "50%");
-      $("#loveu").css("margin-top", "0px");
-      $("#loveu").css("text-align", "center");
+        $("#loveHeart").css("float", "none");
+        // $("#loveHeart").css("width", window.innerWidth-70);
+        // $("#loveHeart").css("height", window.innerWidth-45);
+        $("#code").css("height", "50%");
+        $("#loveu").css("margin-top", "0px");
+        $("#loveu").css("text-align", "center");
       }
       else {
         //PC端
         // console.log("PC端")
         document.getElementById("player").innerHTML = "<iframe frameborder='no' border='0' marginwidth='0' marginheight='0' width=280 height=450 style='position: absolute;left: 0px;top: 50%;transform: translateY(-50%)' src='http://music.163.com/outchain/player?type=0&id=2199721764&auto=1&height=430' ></iframe >"
-            adjustCodePosition();
-          $("#code").css("height", "400px");
-        }
+        adjustCodePosition();
+        $("#code").css("height", "400px");
+      }
     }
     page();
   </script>
