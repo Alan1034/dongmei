@@ -43,11 +43,9 @@
     /* Centered texts in each section
     	* --------------------------------------- */
 
-    .section {
+    /* .section {
       text-align: center;
-    }
-
-
+    } */
 
     /* Defining each section background and styles
     	* --------------------------------------- */
@@ -150,7 +148,7 @@
       </div>
     </div>
     <div class="section" id="section1">
-      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=450 style="position: absolute;left: 0px;top: 50%;transform: translateY(-50%)" src="http://music.163.com/outchain/player?type=0&id=2199721764&auto=1&height=430"></iframe>
+      <span id="player"></span>
       <div class="photopile-wrapper">
         <ul class="photopile">
           <li>
@@ -297,16 +295,38 @@
   <script src="js/photopile.js"></script>
 
   <!-- 比心 -->
-
+  <script>
+    function page() {
+      if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+        //移动端
+        // console.log("移动端")
+        document.getElementById("player").innerHTML = "<iframe frameborder='no' border='0' marginwidth='0' marginheight='0' width=298 height=52  style='position: absolute;left: 0px;top:0px'src='http://music.163.com/outchain/player?type=0&id=2199721764&auto=1&height=32'></iframe>"
+      $("#loveHeart").css("float", "none");
+      // $("#loveHeart").css("width", window.innerWidth-70);
+      // $("#loveHeart").css("height", window.innerWidth-45);
+      $("#code").css("height", "50%");
+      $("#loveu").css("margin-top", "0px");
+      $("#loveu").css("text-align", "center");
+      }
+      else {
+        //PC端
+        // console.log("PC端")
+        document.getElementById("player").innerHTML = "<iframe frameborder='no' border='0' marginwidth='0' marginheight='0' width=280 height=450 style='position: absolute;left: 0px;top: 50%;transform: translateY(-50%)' src='http://music.163.com/outchain/player?type=0&id=2199721764&auto=1&height=430' ></iframe >"
+            adjustCodePosition();
+          $("#code").css("height", "400px");
+        }
+    }
+    page();
+  </script>
   <script type="text/javascript">
     var offsetX = $("#loveHeart").width() / 2;
     var offsetY = $("#loveHeart").height() / 2 - 55;
-    var together = new Date();
-    together.setFullYear(2013, 2, 28);
-    together.setHours(20);
-    together.setMinutes(0);
-    together.setSeconds(0);
-    together.setMilliseconds(0);
+    // var together = new Date();
+    // together.setFullYear(2013, 2, 28);
+    // together.setHours(20);
+    // together.setMinutes(0);
+    // together.setSeconds(0);
+    // together.setMilliseconds(0);
 
     if (!document.createElement('canvas').getContext) {
       var msg = document.createElement("div");
@@ -327,7 +347,7 @@
       //   timeElapse(together);
       // }, 500);
 
-      adjustCodePosition();
+
       $("#code").typewriter();
     }
   </script>

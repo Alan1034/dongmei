@@ -15,7 +15,6 @@ $(function () {
     gardenCtx = gardenCanvas.getContext("2d");
 	gardenCtx.globalCompositeOperation = "lighter";
     garden = new Garden(gardenCtx, gardenCanvas);
-	
 	$("#content").css("width", $loveHeart.width() + $("#code").width());
 	$("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
 	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
@@ -29,7 +28,7 @@ $(function () {
 
 $(window).resize(function() {
     var newWidth = $(window).width();
-    var newHeight = $(window).height();
+	var newHeight = $(window).height();
     if (newWidth != clientWidth && newHeight != clientHeight) {
         location.replace(location);
     }
